@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+include Faker
+50.times do
+  Post.create(
+    title: Faker::Books::Lovecraft.tome,
+    description: Faker::Books::Lovecraft.paragraph
+  )
+end
